@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Review from './Review';
+import ReviewsList from './ReviewsList';
 class Movie extends Component {
     render() {
       return (
@@ -8,7 +8,7 @@ class Movie extends Component {
 
             <div>{this.props.rating}</div>
             <p>{this.props.decription}</p>
-              <Review />
+              <ReviewsList />
           </div>
       );
     }

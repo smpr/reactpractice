@@ -6,7 +6,8 @@ import React, { Component } from 'react';
 //this brings in imprted files such as css and js to link it to the code
 import './App.css';
 import MoviesList from './components/MoviesList';
-import Movie from './components/Movie';
+//import ReviewsList from './components/ReviewsList'
+//import Movie from './components/Movie';
 
 
 

@@ -2,27 +2,27 @@
   //the { component} is shorthand for saying const component = React.Component
 import React, { Component } from 'react';
 // this destructurizes this and makes it easier to use the log or other files
-import logo from './logo.svg';
+//import logo from './logo.svg';
 //this brings in imprted files such as css and js to link it to the code
 import './App.css';
 
+import Movie from './components/Movie';
+
+
+
+
 class App extends Component {
   // render is ALWAYS used. this says that the following html will be used on screen
+  //the <Movie />  brings in the movie.js to show up on the dom where it shows up in the return 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Hello World</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p className="App-footer">
-        <img src={logo} className="App-logo" alt="logo" />
-          This is a footer
-          </p>
+       
+        <Movie />
+           
+    
       </div>
+      
     );
   }
 }

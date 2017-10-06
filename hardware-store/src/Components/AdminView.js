@@ -8,12 +8,12 @@ class AdminView extends Component {
     this.state = {
       productList: [
         {
-          productname: 'Hammer',
+          productName: 'Hammer',
           description: 'Itsa hammer',
           productprice: 12.3
         },
         {
-          productname: 'Nail',
+          productName: 'Nail',
           description: 'Itsa nail',
           productprice: 0.12
         }
@@ -28,7 +28,7 @@ class AdminView extends Component {
         <div>
           { this.state.productList.map((product, index) => {
             return (
-              <Product key={index}productName={product.productname} price={product.productprice} description={product.productdescription}/>
+              <Product key={index}productName={product.productName} price={product.productprice} description={product.productdescription}/>
             )
           }) }
         </div>

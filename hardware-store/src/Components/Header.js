@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import EditSaleItem from './EditSaleItem.js'
 class Header extends Component {
     constructor(){
         super()
@@ -24,11 +24,15 @@ class Header extends Component {
             <div>
                 <h1>Hardware Store</h1>
                 <p>Currently On Sale: {this.state.itemCurentlyOnSale}</p>
-                    {this.state.editSaleItem ? <button onClick={this.toggleEditSaleItem} >Hide</button> : <button onClick={this.toggleEditSaleItem} >Edit Sale Item</button>}
-                
-                <div>
-                    {this.state.editSaleItem ? <input type="text" placeholder={this.state.itemCurentlyOnSale} onChange={this.handleItemCurentlyOnSaleChange} /> : null}
-                </div>
+                <EditSaleItem
+                toggleEditSaleItem={this.toggleEditSaleItem}
+                handleItemCurrentlyOnSaleChange={this.handleItemCurentlyOnSaleChange}
+                editSaleItem={this.state.editSaleItem}
+                itemCurrentlyOnSale={this.state.itemCurentlyOnSale}
+
+                />
+                    
+             
             </div>
         );
     }

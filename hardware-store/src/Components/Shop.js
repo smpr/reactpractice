@@ -1,17 +1,27 @@
-import React, { Component } from 'react';
-import ShopView from './ShopView.js'
-import CartView from './CartView.js'
-import AdminView from './AdminView.js'
+import React, { Component } from 'react'
+import AdminView from './AdminView'
+import ShopView from './ShopView'
+import CartView from './CartView'
+
 class Shop extends Component {
-    render() {
-        return (
-            <div>
-             <ShopView />
-             <CartView />
-             <AdminView />   
-            </div>
-        );
+  constructor () {
+    super()
+
+    this.state = {
+      isAdmin: true
     }
+  }
+
+  render () {
+    return (
+      <div className="shop">
+        <div className="products">
+          {this.state.isAdmin ? <AdminView /> : <ShopView />}
+        </div>
+        <CartView />
+      </div>
+    )
+  }
 }
 
-export default Shop;
+export default Shop

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Product from './Product'
-import AdminForm from './AdminForm.js'
+import AdminForm from './AdminForm'
+
 class AdminView extends Component {
   constructor () {
     super()
@@ -10,16 +11,28 @@ class AdminView extends Component {
         {
           productName: 'Hammer',
           description: 'Itsa hammer',
-          productprice: 12.3
+          price: 12.3
         },
         {
           productName: 'Nail',
           description: 'Itsa nail',
-          productprice: 0.12
+          price: 0.12
         }
       ]
     }
   }
+
+  addProductToProductList = (newProduct) => {
+    const newProductList = [...this.state.productList]
+    newProductList.push(newProduct)
+    this.setState({productList: newProductList})
+  }
+  deleteProductFromProductList=(id)=>{
+      const newProductList =this.state.productList
+      newProductList.splice(id, 1)
+      this.setState({productList: newProductList})
+  }
+
   render () {
     return (
       <div>
@@ -28,12 +41,17 @@ class AdminView extends Component {
         <div>
           { this.state.productList.map((product, index) => {
             return (
-              <Product key={index}productName={product.productName} price={product.productprice} description={product.productdescription}/>
+              <Product key={index} 
+              index={index}
+              productName={product.productName} 
+              price={product.price} 
+              description={product.description} 
+              deleteProductFromProductList={this.deleteProductFromProductList}/>
             )
           }) }
         </div>
         <h2>Create A New Product</h2>
-        <AdminForm />
+        <AdminForm addProductToProductList={this.addProductToProductList} />
       </div>
     )
   }

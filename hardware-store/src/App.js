@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Homepage from './Components/HomPage.js'
+import Header from './Components/Header.js'
+import Shop from './Components/Shop.js'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-       
-        <Homepage />
+        <Header />
+        <Shop />
+      
         
       </div>
     );

@@ -26,3 +26,11 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.SpecialtyImg{
+  width: 150px;
+  height: auto;
+}
+.SpecialtiesTable {
+  background-color: darkgray;
+  max-width: 300px;
+}

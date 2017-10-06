@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
+import '../App.css';
 
 class Specialities extends Component {
     render(){
       return (
         <div>
-        <img src={this.props.imageUrl} />
-        <h3>{this.props.name}</h3>
-        <div> {this.props.description}</div>
+            <table className="SpecialtiesTable">
+                
+        <tr>
+            <td><img src={this.props.imageUrl} className="SpecialtyImg" alt={`${this.props.name}`}/></td>
+        </tr>
+        <tr>
+            <td><h3>{this.props.name}</h3></td>
+        </tr>
+        <tr>
+            <td><div> {this.props.description}</div></td>
+        </tr>
+        </table>
         </div>
       );
     }

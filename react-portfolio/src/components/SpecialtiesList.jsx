@@ -23,9 +23,13 @@ class SpecialtiesList extends Component{
           <div>
           <h2>I specialize in...</h2>
           {
-              specialtiesList.map((specialty)=>{
+              specialtiesList.map((specialty, index)=>{
                   return(
-                     <Specialties name={specialty.name} imageUrl={specialty.imageUrl} description={specialty.description}/>
+                      <table className="ListTable">
+                     <tr>
+                         <td><Specialties name={specialty.name} imageUrl={specialty.imageUrl} description={specialty.description} key={index} index={index} /></td>
+                    </tr>
+                    </table>
                   )
               })
           }

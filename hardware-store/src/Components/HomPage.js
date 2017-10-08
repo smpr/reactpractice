@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import Header from './Header.js'
+import React, { Component } from 'react'
+import Header from './Header'
+import Shop from './Shop'
 
-class Homepage extends Component {
-  render() {
+class HomePage extends Component {
+  render () {
     return (
-        <div>
-          <h1>HomePage</h1>
-          <Header />
-      
+      <div>
+        <Header />
+        <hr />
+        <Shop />
       </div>
-    );
+    )
   }
 }
 
-export default Homepage;
+export default HomePage

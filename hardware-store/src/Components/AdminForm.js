@@ -27,26 +27,22 @@ class AdminForm extends Component {
     // Take cloned object and apply it to the existing state
     this.setState({newForm: newForm})
   }
-  handleSubmit =(event) =>{
-      event.preventDefault()
-      this.props.addProductToProductList(this.state.newForm)
-      const emptyForm={
-          productName:'',
-          price: '',
-          description:'',
 
-      } 
-      this.setState({newForm: emptyForm})
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.addProductToProductList(this.state.newForm)
+
+    const emptyForm = {
+      productName: '',
+      price: '',
+      description: ''
+    }
+    this.setState({newForm: emptyForm})
   }
-  handleDelete = (event) => {
-   // event.preventDefault()
-    //this.props.removeProductFromProductList()
- 
-}
 
   render () {
     return (
-      <form  onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <div>
           {/* value is equal to what we want to change in state */}
           {/* name is equal to the key we want to edit in the object  */}
@@ -67,4 +63,3 @@ class AdminForm extends Component {
   }
 }
 
-export default AdminForm

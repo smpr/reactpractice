@@ -3,55 +3,28 @@ import Product from './Product'
 import AdminForm from './AdminForm'
 
 class AdminView extends Component {
-  constructor () {
-    super()
-
-    this.state = {
-      productList: [
-        {
-          productName: 'Hammer',
-          description: 'Itsa hammer',
-          price: 12.3
-        },
-        {
-          productName: 'Nail',
-          description: 'Itsa nail',
-          price: 0.12
-        }
-      ]
-    }
-  }
-
-  addProductToProductList = (newProduct) => {
-    const newProductList = [...this.state.productList]
-    newProductList.push(newProduct)
-    this.setState({productList: newProductList})
-  }
-  deleteProductFromProductList=(id)=>{
-      const newProductList =this.state.productList
-      newProductList.splice(id, 1)
-      this.setState({productList: newProductList})
-  }
-
   render () {
     return (
       <div>
         <h1>Admin View</h1>
         <h2>Products</h2>
         <div>
-          { this.state.productList.map((product, index) => {
+          { this.props.productList.map((product, index) => {
             return (
-              <Product key={index} 
-              index={index}
-              productName={product.productName} 
-              price={product.price} 
-              description={product.description} 
-              deleteProductFromProductList={this.deleteProductFromProductList}/>
+              <div key={index}>
+                <Product
+                  productName={product.productName}
+                  price={product.price}
+                  description={product.description}
+                />
+                <button onClick={() => this.props.deleteProductFromProductList(index)}>Delete</button>
+              </div>
+
             )
           }) }
         </div>
         <h2>Create A New Product</h2>
-        <AdminForm addProductToProductList={this.addProductToProductList} />
+        <AdminForm addProductToProductList={this.props.addProductToProductList} />
       </div>
     )
   }

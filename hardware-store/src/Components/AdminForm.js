@@ -63,3 +63,4 @@ class AdminForm extends Component {
   }
 }
 
+export default AdminForm

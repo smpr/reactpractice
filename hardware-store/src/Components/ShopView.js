@@ -15,7 +15,7 @@ class ShopView extends Component {
                   price={product.price}
                   description={product.description}
                 />
-                <button>Add To Cart</button>
+                <button onClick={()=>this.props.addProductToCartList(index)} >Add To Cart</button>
               </div>
             )
           }) }

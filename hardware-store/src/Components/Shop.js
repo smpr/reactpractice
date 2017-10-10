@@ -6,7 +6,21 @@ import CartView from './CartView'
 class Shop extends Component {
   constructor () {
     super()
-
+    this.state = {
+      isAdmin: false,
+      cartList: [
+        {
+          productName: 'Hammer',
+          description: 'Itsa hammer',
+          price: 12.3
+        },
+        {
+          productName: 'Nail',
+          description: 'Itsa nail',
+          price: 0.12
+        }
+      ]
+    }
     this.state = {
       isAdmin: true,
       productList: [
@@ -23,7 +37,16 @@ class Shop extends Component {
       ]
     }
   }
-
+  addProductToCartList = (newCart) => {
+    const newCartList = [...this.state.cartList]
+    newCartList.push(newCart)
+    this.setState({cartList: newCartList})
+  }
+  deleteProductFromCartList = (id) => {
+    const newCartList = [...this.state.cartList]
+    newCartList.splice(id, 1)
+    this.setState({cartList: newCartList})
+  }
   addProductToProductList = (newProduct) => {
     const newProductList = [...this.state.productList]
     newProductList.push(newProduct)
